@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<div id="page-content-wrapper">
+    <div class="container-fluid">
+        
+        <center><h1><u>Informations de l'utilisateur</u></h1></center><br>
+        
+        <?php echo $this->messageValide[0]; ?>
+        
+        <br/>
+        
+        <table class="table table-striped table-bordered">
+            <tr>
+                <td style="width:50%; border-right:none;">
+                    <strong>Pseudonyme</strong>
+                </td>
+                <td style="width:50%; border-right:none;">
+                    <?php echo $this->user['login_user'] ?>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:50%; border-right:none;">
+                    <strong>Nom</strong>
+                </td>
+                <td style="width:50%; border-right:none;">
+                    <?php echo $this->user['lastname_user'] ?>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:50%; border-right:none;">
+                    <strong>Prénom</strong>
+                </td>
+                <td style="width:50%; border-right:none;">
+                    <?php echo $this->user['firstname_user'] ?>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:50%; border-right:none;">
+                    <strong>Email</strong>
+                </td>
+                <td style="width:50%; border-right:none;">
+                    <?php echo $this->user['mail_user'] ?>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:50%; border-right:none;">
+                    <strong>Téléphone</strong>
+                </td>
+                <td style="width:50%; border-right:none;">
+                    <?php echo $this->user['phone_user'] ?>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:50%; border-right:none;">
+                    <strong>Adresse</strong>
+                </td>
+                <td style="width:50%; border-right:none;">
+                    <?php echo $this->user['address_user'] ?>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:50%; border-right:none;">
+                    <strong>Code postal</strong>
+                </td>
+                <td style="width:50%; border-right:none;">
+                    <?php echo $this->user['codepostal_user'] ?>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:50%; border-right:none;">
+                    <strong>Ville</strong>
+                </td>
+                <td style="width:50%; border-right:none;">
+                    <?php echo $this->user['ville_user'] ?>
+                </td>
+            </tr>
+        </table>
+        
+        <?php echo $this->form; ?>
+        
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<?php foreach($this->image as $TheImage) : ?>
+
+    <?php //var_dump($TheImage); die; ?>
+
+    <img src="data:image/<?php echo $TheImage['type'] . ' ;base64,' . $TheImage['img64'] ?>" />
+    
+<?php endforeach;

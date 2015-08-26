@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<div id="page-content-wrapper">
+    <div class="container-fluid">
+        
+        <center><h1><u>Liste des ventes en attente de validation</u></h1></center><br>
+        
+        <table class="table table-striped table-bordered">
+            <tr>
+                <td style="width:40%; border-right:none;">
+                    <strong>Titre</strong>
+                </td>
+                <td style="width:50%; border-right:none;">
+                    <strong>Description</strong>
+                </td>
+                <td style="width:10%; border:none;"></td>
+            </tr>
+        </table>
+        
+        <?php foreach($this->resultat as $resultat) : ?>
+        
+            <table class="table table-striped table-bordered">
+                <tr>
+                    <td style="width:40%">
+                        <?php echo $resultat['title']; ?>
+                    </td>
+                    <td style="width:50%; border-right:none;">
+                        <?php echo $resultat['description']; ?>
+                    </td>
+                    <td style="width:10%; border-left:none;">
+                        <a class="btn btn-primary" href="<?php echo $this->url(array('controller' => 'sell', 'action' => 'update', 'id' => $resultat['id_sell']), null, true) ?>">
+                            Vérifier
+                        </a>
+                    </td>
+                </tr>
+            </table>
+
+        <?php endforeach;  ?>
+        
+    </div>
+</div>

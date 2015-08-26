@@ -1,0 +1,90 @@
+<div style="margin-left:50px; margin-right:52%">
+    <br/><h2><u>Informations générales</u></h2><br/>
+    
+    
+    <table style="width:1000px" class="table table-striped table-bordered">
+        <tr>
+            <td style="width:300px; border-right:none;">
+                <strong>Phrase d'accroche : </strong>
+            </td>
+            <td style="width:700px; border-right:none;">
+                <?php echo $this->resultat['catchphrase']; ?>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:300px; border-right:none;">
+                <strong>Facebook :</strong>
+            </td>
+            <td style="width:700px; border-right:none;">
+                <a target="_blank" href="<?php echo $this->resultat['link_facebook'] ?>">
+                    <?php echo $this->resultat['link_facebook']; ?>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:300px; border-right:none;">
+                <strong>Twitter :</strong>
+            </td>
+            <td style="width:700px; border-right:none;">
+                <a target="_blank" href="<?php echo $this->resultat['link_twitter'] ?>">
+                    <?php echo $this->resultat['link_twitter']; ?>
+                </a>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:300px; border-right:none;">
+                <strong>Email :</strong>
+            </td>
+            <td style="width:700px; border-right:none;">
+                <?php echo $this->resultat['website_email']; ?>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:300px; border-right:none;">
+                <strong>Adresse :</strong>
+            </td>
+            <td style="width:700px; border-right:none;">
+                <?php echo $this->resultat['website_address']; ?>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:300px; border-right:none;">
+                <strong>Code postal :</strong>
+            </td>
+            <td style="width:700px; border-right:none;">
+                <?php echo $this->resultat['website_code_postal']; ?>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:300px; border-right:none;">
+                <strong>Ville :</strong>
+            </td>
+            <td style="width:700px; border-right:none;">
+                <?php echo $this->resultat['website_ville']; ?>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:300px; border-right:none;">
+                <strong>Téléphone :</strong>
+            </td>
+            <td style="width:700px; border-right:none;">
+                <?php echo $this->resultat['website_phone']; ?>
+            </td>
+        </tr>
+        <tr>
+            <td style="width:300px; border-right:none;">
+                <strong>Nombre d'articles affichés sur la page d'accueil :</strong>
+            </td>
+            <td style="width:700px; border-right:none;">
+                <?php echo $this->resultat['website_limit_product_index']; ?>
+            </td>
+        </tr>
+    </table>
+    
+    <br/>
+    
+    <a class="btn btn-primary" href="<?php echo $this->url(array('controller' => 'general', 'action' => 'update'), null, true) ?>">
+        Modifier
+    </a>
+    
+</div>

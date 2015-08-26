@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<div id="page-content-wrapper">
+    <div class="container-fluid">
+        
+        <center><h1><u>Message : </u></h1></center><br>
+        
+        <table class="table table-striped table-bordered">
+            <tr>
+                <td style="width:30%; border-right:none;">
+                    <center>
+                        <strong>
+                            Objet du message :
+                        </strong>
+                    </center>
+                </td>
+                <td style="width:70%; border-right:none;">
+                    <strong>
+                        <?php echo $this->message['object']; ?>
+                    </strong>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:30%; border-right:none;">
+                    <center>
+                        <strong>
+                            Date d'envoi du message :
+                        </strong>
+                    </center>
+                </td>
+                <td style="width:70%; border-right:none;">
+                    <?php echo $this->message['dt_send']; ?>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:30%; border-right:none;">
+                    <center>
+                        <strong>
+                            Mail du client : 
+                        </strong>
+                    </center>
+                </td>
+                <td style="width:70%; border-right:none;">
+                    <?php echo $this->message['mail_contact']; ?>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:30%; border-right:none;">
+                    <center>
+                        <strong>
+                            Identité du client :
+                        </strong>
+                    </center>
+                </td>
+                <td style="width:70%; border-right:none;">
+                    <?php echo $this->message['firstname_contact'] . " " . $this->message['lastname_contact']; ?>
+                </td>
+            </tr>
+            <tr>
+                <td style="width:30%; border-right:none;">
+                    <center>
+                        <strong>
+                            Message :
+                        </strong>
+                    </center>
+                </td>
+                <td style="width:70%; border-right:none;">
+                    <?php echo $this->message['message']; ?>
+                </td>
+            </tr>
+        </table>
+        <br/>
+        <a class="btn btn-primary" href="<?php echo $this->url(array('controller' => 'contact', 'action' => 'messages'), null, true) ?>">
+            Retourner sur la liste des messages
+        </a>
+    </div>
+</div>

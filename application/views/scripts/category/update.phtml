@@ -1,0 +1,10 @@
+<div style="margin-left:20px;">
+    <br/><h2>Modification d'une catégorie</h2>
+    <br/>
+    <?php echo $this->messageValide[0]; ?>
+    <br/>
+    <strong>Image actuelle :</strong> 
+    <img style="width:300px; height:400px" src="data:image/<?php echo $this->category['type'] . ' ;base64,' . $this->category['img64'] ?>" />
+    <br/>
+    <?php echo $this->form; ?>
+</div>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<div id="page-content-wrapper">
+    <div class="container-fluid">
+        
+        <center><h1><u>Liste des messages</u></h1></center><br>
+        
+        <table class="table table-striped table-bordered">
+            <tr>
+                <td style="width:20%; border-right:none;">
+                    <center>
+                        <strong>
+                            Objet
+                        </strong>
+                    </center>
+                </td>
+                <td style="width:10%; border-right:none;">
+                    <center>
+                        <strong>
+                            Date
+                        </strong>
+                    </center>
+                </td>
+                <td style="width:20%; border-right:none;">
+                    <center>
+                        <strong>
+                            Nom
+                        </strong>
+                    </center>
+                </td>
+                <td style="width:20%; border-right:none;">
+                    <center>
+                        <strong>
+                            Prénom
+                        </strong>
+                    </center>
+                </td>
+                <td style="width:20%; border-right:none;">
+                    <center>
+                        <strong>
+                            Mail
+                        </strong>
+                    </center>
+                </td>
+                <td style="width:10%; border:none;"></td>
+            </tr>
+        </table>
+        
+        <?php foreach($this->messages as $resultat) : ?>
+        
+            <table class="table table-striped table-bordered">
+                <tr>
+                    <td style="width:20%; border-right:none;">
+                        <?php echo $resultat['object']; ?>
+                    </td>
+                    <td style="width:10%; border-right:none;">
+                        <?php echo $resultat['dt_send']; ?>
+                    </td>
+                    <td style="width:20%; border-right:none;">
+                        <?php echo $resultat['lastname_contact']; ?>
+                    </td>
+                    <td style="width:20%; border-right:none;">
+                        <?php echo $resultat['firstname_contact']; ?>
+                    </td>
+                    <td style="width:20%; border-right:none;">
+                        <?php echo $resultat['mail_contact']; ?>
+                    </td>
+                    <td style="width:10%; border-left:none;">
+                        <a class="btn btn-primary" href="<?php echo $this->url(array('controller' => 'contact', 'action' => 'message', 'id' => $resultat['id_contact']), null, true) ?>">
+                            Voir
+                        </a>
+                    </td>
+                </tr>
+            </table>
+
+        <?php endforeach;  ?>
+        
+    </div>
+</div>

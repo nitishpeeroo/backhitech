@@ -1,0 +1,243 @@
+<?php echo $this->doctype('HTML5') ?>
+
+<html>
+    <head>
+        <meta charset="utf-8" />
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link type="text/plain" rel="author"     href="humans.txt" />
+        <!--<link type="text/css"   rel='stylesheet' href='http://fonts.googleapis.com/css?family=Lato:100,300,700%7cBitter:400,700' />-->
+        <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+        <link type="text/css" href="<?php echo $this->baseUrl('css/bootstrap.css') ?>"   rel="stylesheet" />
+        <link type="text/css" href="<?php echo $this->baseUrl('css/flexslider.css') ?>"   rel="stylesheet" />
+        <link type="text/css" href="<?php echo $this->baseUrl('css/ionicons.min.css') ?>"   rel="stylesheet" />
+        <link type="text/css" href="<?php echo $this->baseUrl('css/style.css') ?>"   rel="stylesheet" />
+        <link type="text/css" href="<?php echo $this->baseUrl('css/jquery-ui.css') ?>"   rel="stylesheet" />
+        <link type="text/css" href="<?php echo $this->baseUrl('css/jquery.cleditor.css') ?>"   rel="stylesheet" />
+        <link type="text/css" href="<?php echo $this->baseUrl('css/bootstrap.min.css') ?>"   rel="stylesheet" />
+        <link type="text/css" href="<?php echo $this->baseUrl('css/simple-sidebar.css') ?>"   rel="stylesheet" />
+        <link type="text/css" href="<?php echo $this->baseUrl('css/materialize.css') ?>"   rel="stylesheet" />
+        <link type="text/css" href="<?php echo $this->baseUrl('css/materialize.min.css') ?>"   rel="stylesheet" media="screen,projection" />
+
+        <script type="text/javascript" src="<?php echo $this->baseUrl('/js/jquery-1.11.0.js') ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->baseUrl('/js/bootstrap.js') ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->baseUrl('/js/bootstrap.min.js') ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->baseUrl('/js/jquery-ui.js') ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->baseUrl('/js/jquery.cleditor.js') ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->baseUrl('/js/jquery.cleditor.min.js') ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->baseUrl('/js/fonctions.js') ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->baseUrl('/js/captcha.js') ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->baseUrl('/js/materialize.js') ?>"></script>
+        <script type="text/javascript" src="<?php echo $this->baseUrl('/js/materialize.min.js') ?>"></script>
+
+        <?php
+        echo $this->headTitle();
+        echo $this->headMeta();
+        echo $this->headLink();
+        echo $this->headStyle();
+        echo $this->headScript();
+        ?>
+    </head>
+
+    <body>
+
+        <?php if (!isset($this->role)) { ?>
+            <nav>
+                <div class="nav-wrapper">
+                    <a href="/" class="brand-logo"><img src="/img/batman-logo-big.gif" style="max-height: 68px; max-width: 100%;"/></a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="sass.html">Hi Tech Online.dev</a></li>
+                    </ul>
+                </div>
+            </nav>
+        <?php } else { ?>
+            <div class="wrapper">
+                <!-- START LEFT SIDEBAR NAV-->
+                <aside id="left-sidebar-nav">
+                    <ul style="width: 240px;" id="slide-out" class="side-nav fixed leftside-navigation ps-container ps-active-y">
+                        <li class="user-details cyan darken-2">
+                            <div class="row">
+                                <div class="col col s8 m8 l8">
+                                    <a class="btn-flat dropdown-button waves-effect waves-light white-text profile-btn" href="#" data-activates="profile-dropdown"><?php echo $this->identifiant; ?><i class="mdi-navigation-arrow-drop-down right"></i></a>
+                                    <ul id="profile-dropdown" class="dropdown-content" style="overflow: hidden;min-width: 500px!important;">
+                                        <li><a href="#"><i class="mdi-action-face-unlock"></i> Profil</a>
+                                        </li>
+                                        <li><a href="#"><i class="mdi-action-settings"></i> Settings</a>
+                                        </li>
+                                        <li><a href="#"><i class="mdi-communication-live-help"></i> Help</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li><a href="#"><i class="mdi-action-lock-outline"></i> Lock</a>
+                                        </li>
+                                        <li><a href="/session/deconnexion"><i class="mdi-hardware-keyboard-tab"></i> Deconnexion</a>
+                                        </li>
+                                    </ul>
+                                    <p class="user-roal">Administrateur</p>
+                                </div>
+                            </div>
+                        </li>
+
+
+
+                        <li class="no-padding">
+                            <ul class="collapsible collapsible-accordion">
+
+
+                                <li class="bold"><a href="/index/accueil" class="waves-effect waves-cyan"><i class="mdi-device-now-widgets"></i> Tableau de bord <span class="new badge"></span></a>
+                                </li>
+                                <li class="bold"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-editor-border-all"></i> Evenement</a>
+                                    <div style="display: block;" class="collapsible-body">
+                                        <ul>
+                                            <li><a href="/event/liste">Liste des évènements</a>
+                                            </li>                                        
+                                            <li><a href="/event/creation">Ajouter un évènement</a>
+                                            </li>
+                                            <li><a href="eCommerce-invoice.html">Supprimer un évènement</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+
+                        </li>
+                        <li class="bold"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-action-shopping-cart"></i> Produit</a>
+                            <div style="display: block;" class="collapsible-body">
+                                <ul>
+                                    <li><a href="eCommerce-products-page.html">Liste des produits</a>
+                                    </li>                                        
+                                    <li><a href="eCommerce-pricing.html">Ajouter un produit</a>
+                                    </li>
+                                    <li><a href="eCommerce-invoice.html">Supprimer un produit</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="bold"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-action-account-circle"></i> Utilisateur</a>
+                            <div style="display: block;" class="collapsible-body">
+                                <ul>
+                                    <li><a href="eCommerce-products-page.html">Liste des utilisateurs</a>
+                                    </li>                                        
+                                    <li><a href="eCommerce-pricing.html">Ajouter un utilisateur</a>
+                                    </li>
+                                    <li><a href="eCommerce-invoice.html">Supprimer un utilisateur</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="bold"><a class="collapsible-header  waves-effect waves-cyan"><i class="mdi-social-pages"></i> Newsletter</a>
+                            <div style="display: block;" class="collapsible-body">
+                                <ul>
+                                    <li><a href="eCommerce-products-page.html">Liste des newsletters</a>
+                                    </li>                                        
+                                    <li><a href="eCommerce-pricing.html">Ecrire une newsletter</a>
+                                    </li>
+                                    <li><a href="eCommerce-invoice.html">Envoyer une newsletter</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="bold"><a class="collapsible-header waves-effect waves-cyan"><i class="mdi-maps-local-laundry-service "></i>Livreur</a>
+                            <div style="display: block;" class="collapsible-body">
+                                <ul>
+                                    <li><a href="eCommerce-products-page.html">Liste des livreur</a>
+                                    </li>                                        
+                                    <li><a href="eCommerce-pricing.html">Ajouter un livreur</a>
+                                    </li>
+                                    <li><a href="eCommerce-invoice.html">Supprimer un livreur</a>
+                                    </li>
+                                </ul>
+                            </div> 
+                        </li>
+                    </ul>
+                    </li>
+                    <li class="li-hover"><div class="divider"></div></li>
+                    </ul>
+
+
+                </aside>
+                <div class="wrapper">
+                    <!-- START CONTENT -->
+                    <section id="content">
+
+                        <!--start container-->
+                        <div class="container" style="margin-left: 17%;    width: 83%;">
+                            <script type="text/javascript">
+                                // Toast Notification
+                                $(window).load(function () {
+                                    setTimeout(function () {
+                                        Materialize.toast('<span>Bienvenue sur le BackOffice de Hi Tech Online</span>', 3000);
+                                    }, 1500);
+    //                setTimeout(function () {
+    //                    Materialize.toast('<span><?php echo $this->identifiant; ?></span>', 3000);
+    //                }, 5000);
+    //                setTimeout(function () {
+    //                    Materialize.toast('<span>You have new order.</span><a class="btn-flat yellow-text" href="#">Read<a>', 3000);
+    //                }, 15000);
+                                });
+                                $(document).ready(function () {
+                                    $('.collapsible').collapsible({
+                                        accordion: false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+                                    });
+                                         $('.datepicker').pickadate({
+                                    selectMonths: true, // Creates a dropdown to control month
+                                    selectYears: 15, // Creates a dropdown of 15 years to control year
+                                    selectHours:true
+                                });
+                                });
+                           
+                            </script>
+                            <?php
+                        }
+                        echo $this->layout()->content;
+                        ?>
+                    </div>
+                </section>
+            </div>
+            <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+                <a class="btn-floating btn-large red">
+                    <i class="large mdi-editor-mode-edit"></i>
+                </a>
+                <ul>
+                    <li><a href="css-helpers.html" class="btn-floating red"><i class="large mdi-communication-live-help"></i></a></li>
+                    <li><a href="app-widget.html" class="btn-floating yellow darken-1"><i class="large mdi-device-now-widgets"></i></a></li>
+                    <li><a href="app-calendar.html" class="btn-floating green"><i class="large mdi-editor-insert-invitation"></i></a></li>
+                    <li><a href="app-email.html" class="btn-floating blue"><i class="large mdi-communication-email"></i></a></li>
+                </ul>
+            </div>
+
+            <!-- END WRAPPER -->
+
+
+            <!-- END MAIN -->
+
+
+
+            <!-- //////////////////////////////////////////////////////////////////////////// -->
+
+            <!-- START FOOTER -->
+            <footer class="page-footer">
+                <div class="container">
+                    <div class="row col s6">
+                        <div class="">
+                            <!-- Grey navigation panel -->
+                        </div>
+
+                        <div class="col l4 offset-l2 s12">
+                            <h5 class="white-text">Sales by Country</h5>
+                            <p class="grey-text text-lighten-4">A sample polar chart to show sales by country.</p>
+                            <div id="polar-chart-holder">
+                                <canvas style="width: 366px; height: 274px;" height="274" id="polar-chart-country" width="366"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <div class="container right">   
+                        Copyright © 2015 <a class="grey-text text-lighten-4" href="#">BackOffice Hi Tech Online</a> Tous droit réservés.
+                        <span class="right"> Designé et développé par <a class="grey-text text-lighten-4" href="http://geekslabs.com/">INTER-IPSSI</a></span>
+                    </div>
+                </div>
+            </footer>
+
+
+            <div class="hiddendiv common"></div><div style="left: 0px; right: 0px;" class="drag-target"></div><div style="right: 0px;" class="drag-target"></div><div id="toast-container"></div></body></html>
