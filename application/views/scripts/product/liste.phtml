@@ -1,0 +1,42 @@
+
+<div class="row">
+    <div class="col s12 m12 l12">
+        <div class="card-panel">
+            <h4 class="header2">Liste des produits</h4>
+                                                <form  method="post"  action="<?php echo $this->url(array('controller' => 'product', 'action' => 'creation'), null, true); ?>">
+                                        <input type="submit" value="Ajouter un produit">
+                                    </form>
+            <div class="row">
+                <div class="col s12">
+                    <?php
+                    foreach ($this->products as $product) {
+                        foreach ($product as $p) {
+                            ?>
+                            <div class="row">
+                                <div class="col s6">
+                                    <?php
+                                    echo $p["id"];
+                                    echo $p["nom"];
+                                    echo $p["quantite"];
+                                    echo $p["image"];
+                                    echo $p["description"];
+                                    ?> 
+                                    <img src="../../../../../image/<?php echo $p["image"]; ?>">
+                                </div>
+                                <div class="col s6">
+                                    <form  method="post"  action="<?php echo $this->url(array('controller' => 'event', 'action' => 'modification', "id" => $e['id']), null, true); ?>">
+                                        <input type="submit" value="Modifier">
+                                    </form>
+                                    <form  method="post"  action="<?php echo $this->url(array('controller' => 'event', 'action' => 'supprimer', "id" => $e['id']), null, true); ?>">
+                                        <input type="submit" value="Supprimer">
+                                    </form>
+                                </div>
+                            </div>
+    <?php }
+} ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

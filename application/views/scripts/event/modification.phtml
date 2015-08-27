@@ -1,0 +1,130 @@
+<?php
+$event = $this->event[0];
+var_dump($event);
+?>
+<div class="row">
+    <div class="col s12 m12 l12">
+        <div class="card-panel">
+            <h4 class="header2">Modifier un évènement</h4>
+            <div class="row">
+                <form class="col s12" method="post"  action="<?php echo $this->url(array('controller' => 'event', 'action' => 'modifier'), null, true); ?>" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="<?php echo $event['id']; ?>">
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input name="titre" type="text" value="<?php echo $event['nom']; ?>">
+                            <label for="first_name">Nom de l'évènement</label>
+                        </div>
+
+                        <div class="file-field input-field col s6">
+                            <input class="file-path validate" type="text">
+                            <div class="btn">
+                                <span>Image</span>
+                                <input type="file">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="input-field col s3">
+                            <input value="<?php echo substr($event['debut_evenement'], 0, -9); ?>" type="date" name="debut" class="datepicker">
+                            <label class="active">Début de l'évènement</label>
+                        </div>              
+                        <div class="input-field col s3">
+                            <select name="debutHeure" class="browser-default">
+                                <option value="<?php echo substr($event['debut_evenement'], 10); ?>" disabled selected><?php echo substr($event['debut_evenement'], 10, -6) . " H"; ?></option>
+                                <option value="07">07 H</option>
+                                <option value="08">08 H</option>
+                                <option value="09">09 H</option>
+                                <option value="10">10 H</option>
+                                <option value="11">11 H</option>
+                                <option value="12">12 H</option>
+                                <option value="13">13 H</option>
+                                <option value="14">14 H</option>
+                                <option value="15">15 H</option>
+                                <option value="16">16 H</option>
+                                <option value="17">17 H</option>
+                                <option value="18">18 H</option>
+                                <option value="19">19 H</option>
+                                <option value="20">20 H</option>
+                                <option value="21">21 H</option>
+                                <option value="22">22 H</option>
+                                <option value="23">23 H</option>
+                                <option value="00">00 H</option>   
+                            </select>
+
+                        </div>    
+
+                    </div>
+                    <div class="row">
+
+
+
+
+                        <div class="input-field col s3">
+                            <input value="<?php echo substr($event['fin_evenement'], 0, -9); ?>" name="fin" type="date" class="datepicker">   
+                            <label class="active">Fin de l'évènement</label>
+                        </div>
+                        <div class="input-field col s3">
+                            <select name="finHeure" class="browser-default">
+                                <option value="<?php echo substr($event['fin_evenement'], 10); ?>" disabled selected><?php echo substr($event['fin_evenement'], 10, -6) . " H"; ?></option>
+                                <option value="07">07 H</option>
+                                <option value="08">08 H</option>
+                                <option value="09">09 H</option>
+                                <option value="10">10 H</option>
+                                <option value="11">11 H</option>
+                                <option value="12">12 H</option>
+                                <option value="13">13 H</option>
+                                <option value="14">14 H</option>
+                                <option value="15">15 H</option>
+                                <option value="16">16 H</option>
+                                <option value="17">17 H</option>
+                                <option value="18">18 H</option>
+                                <option value="19">19 H</option>
+                                <option value="20">20 H</option>
+                                <option value="21">21 H</option>
+                                <option value="22">22 H</option>
+                                <option value="23">23 H</option>
+                                <option value="00">00 H</option>    
+                            </select>
+
+                        </div>    
+                    </div>  
+                    <style>
+                        *::-webkit-input-placeholder {
+                            color: red;
+                        }
+                        *:-moz-placeholder {
+                            /* FF 4-18 */
+                            color: red;
+                        }
+                        *::-moz-placeholder {
+                            /* FF 19+ */
+                            color: red;
+                        }
+                        *:-ms-input-placeholder {
+                            /* IE 10+ */
+                            color: red;
+                        }
+                    </style>
+
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <textarea value="<?php echo $event['description_evenement']; ?>" placeholder="<?php echo $event['description_evenement']; ?>" name="description"  class="materialize-textarea" ></textarea>
+                            <label for="message">Description de l'évènement</label>
+                            <span style="float: right; font-size: 12px; height: 1px;"></span></div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <button class="btn cyan waves-effect waves-light right" type="submit" name="action">Modifier un évènement
+                                    <i class="mdi-content-send right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
